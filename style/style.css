@@ -1,0 +1,230 @@
+/* ======= GLOBAL STYLE ======= */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1e1e1e;
+  background-color: #f8f9fc;
+}
+
+/* animasi page home */
+
+/* 🌈 Hero Gradient Animation */
+/* === 🌌 PREMIUM MOTION SET === */
+
+/* 🔮 Hero: Fluid Gradient Motion */
+.hero-section {
+  background: linear-gradient(-60deg, #4f46e5, #6d28d9, #3b82f6, #6366f1, #818cf8);
+  background-size: 500% 500%;
+  animation: heroFlow 18s ease infinite alternate;
+}
+@keyframes heroFlow {
+  0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+  50% { background-position: 100% 50%; filter: hue-rotate(45deg); }
+  100% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+}
+
+/* 🌠 Global Reveal Motion (sinkron dengan observer kamu) */
+.reveal {
+  opacity: 0;
+  transform: translateY(80px) rotateX(15deg) scale(0.9);
+  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform, opacity;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) rotateX(0) scale(1);
+}
+
+/* 🌈 Service Cards — 3D Glass Hover */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.service-card:hover {
+  transform: translateY(-12px) rotateX(4deg) rotateY(-4deg) scale(1.05);
+  box-shadow: 0 25px 60px rgba(99, 102, 241, 0.3);
+}
+
+/* 💎 Glass Reflection */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -100%; left: -100%;
+  width: 250%; height: 250%;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 1.5s ease;
+}
+.service-card:hover::before {
+  opacity: 1;
+  transform: translate(100%, 100%) rotate(25deg);
+}
+
+/* 💫 Soft Pulse Glow Around Icon */
+.glow-icon {
+  filter: drop-shadow(0 0 0 rgba(99,102,241,0.2));
+  animation: glowPulse 3.5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(99,102,241,0.2)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 22px rgba(99,102,241,0.8)); transform: scale(1.1); }
+}
+
+/* 🚀 Floating Parallax Card Effect */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 🌊 Image Hover Depth */
+.service-card img {
+  transition: transform 1.2s ease;
+}
+.service-card:hover img {
+  transform: scale(1.08) rotateZ(1deg);
+}
+
+/* 🧬 Section Divider Glow */
+.section-divider {
+  width: 120px;
+  height: 4px;
+  margin: 20px auto;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #818cf8, #6366f1, #3b82f6, #818cf8);
+  background-size: 300% 300%;
+  animation: dividerShine 5s ease infinite;
+}
+@keyframes dividerShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🪶 Footer Glow */
+footer {
+  position: relative;
+  overflow: hidden;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at top center, rgba(99,102,241,0.2), transparent 70%);
+  animation: footerGlow 12s ease-in-out infinite alternate;
+}
+@keyframes footerGlow {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* finish animasi page home */
+
+
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-weight: 600;
+  color: #111;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar img {
+  width: 32px;
+  height: 32px;
+}
+
+/* ======= HERO SECTION ======= */
+.page-hero {
+  text-align: center;
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+  color: white;
+  padding: 100px 20px;
+}
+
+.page-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ======= PAGE CONTENT ======= */
+.page-content h2 {
+  color: #111827;
+  border-left: 4px solid #4f46e5;
+  padding-left: 10px;
+  margin-top: 40px;
+}
+
+.page-content p {
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.page-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page-content li {
+  margin-bottom: 0.75rem;
+  color: #374151;
+}
+
+.page-content li strong {
+  color: #111;
+}
+
+/* ======= FOOTER ======= */
+.footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  margin-top: 80px;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #818cf8;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
