@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kavari — Enterprise Cyber Security, SOC, Red Teaming & IT Solutions</title>
+  <meta name="description" content="Kavari menyediakan solusi menyeluruh untuk keamanan siber, red teaming, SOC, IT infrastructure, web development, dan desain grafis.">
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    body {
+      scroll-behavior: smooth;
+      background-color: #ffffff;
+    }
+
+    /* Hover animation for cards */
+    .card-hover {
+      transition: all 0.4s ease;
+      transform: translateY(0);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Subtle Batik SVG Pattern */
+    .batik-bg {
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.25'%3E%3Cpath d='M50 0L60 20L80 20L65 35L70 55L50 45L30 55L35 35L20 20L40 20Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 180px 180px;
+      background-repeat: repeat;
+    }
+
+    /* Gradient animated text */
+    .animate-textGradient {
+      background-size: 200% auto;
+      animation: gradientShift 4s linear infinite;
+    }
+    @keyframes gradientShift {
+      to { background-position: 200% center; }
+    }
+
+    /* Reveal animation */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    [data-reveal].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-indigo-600">KAVARI</h1>
+      <nav class="space-x-6">
+        <a href="#home" class="hover:text-indigo-600">Home</a>
+        <a href="#services" class="hover:text-indigo-600">Services</a>
+        <a href="#roadmap" class="hover:text-indigo-600">Roadmap</a>
+        <a href="#flow" class="hover:text-indigo-600">SOC Flow</a>
+        <a href="#why" class="hover:text-indigo-600">Why Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="pt-32 pb-20 text-center bg-gradient-to-br from-indigo-50 to-white">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-400 to-pink-500 animate-textGradient">
+        Enterprise Cyber Security & Digital Solutions
+      </h1>
+      <p class="text-gray-600 text-lg mb-8">
+        Protecting and empowering your business through world-class cybersecurity, IT infrastructure, and digital innovation.
+      </p>
+      <a href="#services" class="px-8 py-4 bg-indigo-600 text-white rounded-full font-semibold shadow hover:bg-indigo-700 transition">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-500 animate-textGradient">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow card-hover cursor-pointer">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">Cyber Security & SOC</h3>
+          <p class="text-gray-600">End-to-end cybersecurity, red teaming, and managed SOC operations for enterprise-scale protection.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow card-hover cursor-pointer">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">IT Infrastructure</h3>
+          <p class="text-gray-600">Design, deployment, and management of scalable and secure IT systems.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow card-hover cursor-pointer">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">Web Development</h3>
+          <p class="text-gray-600">Build modern, responsive, and secure websites tailored to your business goals.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow card-hover cursor-pointer">
+          <h3 class="text-xl font-semibold text-indigo-600 mb-3">Graphic Design</h3>
+          <p class="text-gray-600">Creative design for branding, UI/UX, and marketing — visually elevate your business presence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-12 text-indigo-600">ISO Implementation Roadmap</h2>
+      <div class="relative border-l-4 border-indigo-500 ml-6">
+        <div class="mb-10 ml-6">
+          <div class="absolute w-6 h-6 bg-indigo-600 rounded-full -left-3"></div>
+          <h3 class="text-xl font-semibold">1. Gap Analysis</h3>
+          <p class="text-gray-600">Assess compliance gaps against ISO standards.</p>
+        </div>
+        <div class="mb-10 ml-6">
+          <div class="absolute w-6 h-6 bg-indigo-600 rounded-full -left-3"></div>
+          <h3 class="text-xl font-semibold">2. Policy & Procedure Development</h3>
+          <p class="text-gray-600">Define frameworks, SOPs, and internal controls.</p>
+        </div>
+        <div class="mb-10 ml-6">
+          <div class="absolute w-6 h-6 bg-indigo-600 rounded-full -left-3"></div>
+          <h3 class="text-xl font-semibold">3. Implementation & Training</h3>
+          <p class="text-gray-600">Deploy practices across teams with workshops.</p>
+        </div>
+        <div class="mb-10 ml-6">
+          <div class="absolute w-6 h-6 bg-indigo-600 rounded-full -left-3"></div>
+          <h3 class="text-xl font-semibold">4. Internal Audit</h3>
+          <p class="text-gray-600">Evaluate readiness and compliance maturity.</p>
+        </div>
+        <div class="ml-6">
+          <div class="absolute w-6 h-6 bg-indigo-600 rounded-full -left-3"></div>
+          <h3 class="text-xl font-semibold">5. Certification</h3>
+          <p class="text-gray-600">Official audit and ISO certification issuance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOC FLOW -->
+  <section id="flow" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold text-center mb-12 text-indigo-600">SOC AI Flow</h2>
+      <div class="grid md:grid-cols-5 gap-4 text-center">
+        <div class="p-6 bg-white rounded-2xl shadow card-hover">Log Collection</div>
+        <div class="p-6 bg-white rounded-2xl shadow card-hover">AI Correlation</div>
+        <div class="p-6 bg-white rounded-2xl shadow card-hover">Threat Detection</div>
+        <div class="p-6 bg-white rounded-2xl shadow card-hover">Incident Response</div>
+        <div class="p-6 bg-white rounded-2xl shadow card-hover">Continuous Monitoring</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY KAVARI -->
+  <section id="why" class="py-20 batik-bg">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-indigo-300 to-pink-500 animate-textGradient">Mengapa Memilih Kami?</h2>
+      <p class="text-gray-600 mb-12">Kami menggabungkan keunggulan teknis, pemahaman lokal, dan pengalaman compliance untuk melindungi aset digital dan fisik Anda.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/90 p-6 rounded-2xl shadow card-hover">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Berpengalaman</h3>
+          <p>Konsultan kami telah membantu berbagai sektor — perbankan, fintech, hingga pendidikan.</p>
+        </div>
+        <div class="bg-white/90 p-6 rounded-2xl shadow card-hover">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Pendekatan Terukur</h3>
+          <p>Kami menerapkan pendekatan berbasis risiko agar setiap solusi keamanan tepat sasaran.</p>
+        </div>
+        <div class="bg-white/90 p-6 rounded-2xl shadow card-hover">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-600">Dukungan Penuh</h3>
+          <p>Tim kami siap membantu dari tahap perencanaan hingga audit eksternal selesai.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="mb-4">© 2025 Kavari Kreasi Nusantara — All Rights Reserved.</p>
+      <p>Empowering businesses with technology and security.</p>
+    </div>
+  </footer>
+
+  <!-- REVEAL SCRIPT -->
+  <script>
+    const revealElements = document.querySelectorAll("[data-reveal]");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
