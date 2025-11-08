@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kavari — Enterprise Cyber Security, SOC, Red Teaming & Asset Labeling</title>
+  <title>Kavari — Consultant Cyber Security, SOC, Red Teaming</title>
   <meta name="description" content="Kavari delivers end-to-end cybersecurity: SOC, red teaming, penetration testing, threat intelligence, managed security, and comprehensive asset labeling for CCTV, laptops, racks and network room devices.">
   <meta name="keywords" content="cyber security, SOC, red team, penetration testing, vulnerability assessment, asset labeling, CCTV labels, laptop labels, rack labels, network room, ISO 27001, NIST, OT Security">
   <link rel="canonical" href="https://www.kavari.example/">
   <link rel="stylesheet" href="style/style.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
   <!-- Schema (organization) -->
   <script type="application/ld+json">
@@ -150,7 +152,7 @@
           </h1>
           <p class="mt-6 text-gray-600 max-w-xl">
             Kavari provides tailored cybersecurity services for organizations: SOC operations, penetration testing, red teaming,
-            threat intelligence, OT security, and asset labeling for CCTV, laptops, racks and network devices.
+            threat intelligence, OT security, network devices and Consultant ISO 27001.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
@@ -230,35 +232,67 @@
       </div>
     </section>
 
-    <!-- WHY KAVARI -->
-    <section id="why" class="py-16 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6 reveal" data-reveal>
-        <h2 class="text-3xl font-bold mb-6 text-gray-900">Mengapa Memilih Kami?</h2>
-        <p class="text-gray-600 mb-10">Kami kombinasi technical excellence, local delivery, dan compliance experience untuk mengamankan aset digital dan fisik Anda.</p>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-2xl shadow card-hover reveal" data-reveal>
-            <h3 class="text-xl font-semibold mb-3 accent">Berpengalaman</h3>
-            <p>Konsultan kami telah membantu berbagai sektor, mulai dari perbankan, fintech, hingga pendidikan.</p>
-          </div>
+<!-- WHY KAVARI -->
+<section id="why" class="relative py-20 bg-gradient-to-b from-white via-indigo-200/70 to-[#4E61D3] overflow-hidden">
+  <!-- Batik Accent Background -->
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/batik.png')] opacity-[0.12] mix-blend-soft-light"></div>
 
-          <div class="bg-white p-6 rounded-2xl shadow card-hover reveal" data-reveal>
-            <h3 class="text-xl font-semibold mb-3 accent">Pendekatan Terukur</h3>
-            <p>Kami menerapkan pendekatan berbasis risiko agar setiap solusi keamanan tepat sasaran.</p>
-          </div>
+  <div class="relative max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-5xl font-extrabold mb-6 pb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-indigo-400 to-pink-500 animate-textGradient">
+      Mengapa Memilih Kami?
+    </h2>
+    <p class="text-gray-700 mb-14 max-w-3xl mx-auto text-lg">
+      Kami memadukan <span class="font-semibold text-indigo-600">technical excellence</span>, <span class="font-semibold text-indigo-600">local delivery</span>, dan <span class="font-semibold text-indigo-600">compliance experience</span> untuk melindungi aset digital & fisik Anda dengan standar terbaik.
+    </p>
 
-          <div class="bg-white p-6 rounded-2xl shadow card-hover reveal" data-reveal>
-            <h3 class="text-xl font-semibold mb-3 accent">Dukungan Penuh</h3>
-            <p>Tim kami siap membantu dari tahap perencanaan hingga audit eksternal selesai.</p>
-          </div>
-        </div>
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-md border border-indigo-100 hover:shadow-xl hover:scale-[1.03] transition-all duration-500">
+        <div class="text-3xl mb-4 text-indigo-600">🏆</div>
+        <h3 class="text-xl font-bold mb-3 text-indigo-800">Berpengalaman</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Konsultan kami telah membantu berbagai sektor dari perbankan, fintech, hingga pendidikan dan pemerintahan.
+        </p>
       </div>
-    </section>
+
+      <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-md border border-indigo-100 hover:shadow-xl hover:scale-[1.03] transition-all duration-500">
+        <div class="text-3xl mb-4 text-indigo-600">📊</div>
+        <h3 class="text-xl font-bold mb-3 text-indigo-800">Pendekatan Terukur</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Kami menerapkan metodologi berbasis risiko agar setiap langkah keamanan terukur dan tepat sasaran.
+        </p>
+      </div>
+
+      <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-md border border-indigo-100 hover:shadow-xl hover:scale-[1.03] transition-all duration-500">
+        <div class="text-3xl mb-4 text-indigo-600">🤝</div>
+        <h3 class="text-xl font-bold mb-3 text-indigo-800">Dukungan Penuh</h3>
+        <p class="text-gray-600 leading-relaxed">
+          Tim kami mendampingi Anda mulai dari tahap perencanaan, implementasi, hingga audit eksternal selesai.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes textGradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .animate-textGradient {
+      background-size: 200% 200%;
+      animation: textGradient 6s ease infinite;
+    }
+  </style>
+</section>
+
 
     <!-- ARTICLE CAROUSEL -->
     <section class="py-20">
       <div class="max-w-6xl mx-auto px-6 text-center reveal" data-reveal>
-        <h2 class="text-3xl font-bold mb-6">Artikel & Insight Keamanan</h2>
+        <h2 class="text-5xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6 pb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-gray-400 to-indigo-400 animate-textGradient">
+            Artikel & Insight Keamanan
+        </h2>
         <p class="text-gray-600 mb-8">Pembahasan praktik terbaik, panduan ISO, serta analisa topik keamanan siber terbaru.</p>
       </div>
 
@@ -303,7 +337,10 @@
 <section id="roadmap" class="relative bg-gradient-to-b from-indigo-50 to-white py-24">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-extrabold text-indigo-800 mb-4">Roadmap Implementasi ISO 27001</h2>
+      <h2 class="text-5xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-gray-500 to-indigo-400 animate-textGradient">
+      ⚡Roadmap Implementasi ISO 27001
+    </h2>
+      <h2 class="text-4xl font-extrabold text-indigo-800 mb-4"></h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
         Langkah-langkah strategis menuju sistem manajemen keamanan informasi yang efektif dan siap sertifikasi.
       </p>
@@ -440,7 +477,7 @@
   }
 
   .icon-center {
-    background: radial-gradient(circle at center, #4f46e5, #312e81);
+    background: radial-gradient(circle at center, #706adc, #3e3b9c);
     color: white;
     width: 3.5rem;
     height: 3.5rem;
@@ -461,165 +498,92 @@
 </style>
 
 <!-- ✅ AI-DRIVEN SOC FLOW SECTION -->
-<section id="soc-flow" class="relative bg-gradient-to-b from-gray-900 via-indigo-950 to-black py-24 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-    <h2 class="text-4xl font-extrabold text-white mb-6 tracking-tight">
-      AI-Driven SOC Flow — Next Generation Cyber Defense
+ <!-- 🌐 AI-Driven SOC Flow (S-Shape Layout) -->
+<section id="soc-flow" class="relative py-32 bg-gradient-to-b from-gray-950 via-indigo-600/60 to-black overflow-hidden text-gray-100">
+  <!-- background cyber glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.15),transparent_70%)]"></div>
+  <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-10"></div>
+
+  <!-- heading -->
+  <div class="relative z-10 text-center max-w-5xl mx-auto px-6 mb-24">
+    <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-white to-indigo-400 animate-textGradient">
+      ⚡ AI-Driven SOC Flow
     </h2>
-    <p class="text-gray-300 max-w-3xl mx-auto mb-16">
-      Alur kerja Security Operation Center modern berbasis Artificial Intelligence untuk deteksi, respons, dan peningkatan keamanan berkelanjutan.
+    <p class="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
+      A visualized next-generation SOC process — illustrating how AI-driven analytics, orchestration, and continuous defense intelligence flow seamlessly through the system.
     </p>
+  </div>
 
-    <!-- FLOW CONTAINER -->
-    <div class="relative flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-6">
-      
-      <!-- STEP 1 -->
-      <div class="soc-step" data-step>
-        <div class="soc-icon">
-          <i class="fa-solid fa-cloud-arrow-down"></i>
-        </div>
-        <h3 class="soc-title">Log & Telemetry Ingestion</h3>
-        <p class="soc-text">Mengumpulkan data dari endpoint, firewall, cloud, dan aplikasi secara real-time.</p>
+  <!-- SECTION 1: Flow Right -->
+  <div class="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12 max-w-7xl mx-auto px-8 mb-32">
+    <div class="flex-1 space-y-10">
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-indigo-400 transition-all duration-500 shadow-[0_0_25px_rgba(99,102,241,0.25)]">
+        <h3 class="font-semibold text-indigo-600 text-xl mb-3">🛰️ Log & Telemetry Ingestion</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Collects endpoint, firewall, and application data streams in real-time using syslog, API, and agent-based collectors.
+        </p>
       </div>
-
-      <!-- Arrow -->
-      <div class="soc-arrow"><i class="fa-solid fa-angles-right"></i></div>
-
-      <!-- STEP 2 -->
-      <div class="soc-step" data-step>
-        <div class="soc-icon">
-          <i class="fa-solid fa-database"></i>
-        </div>
-        <h3 class="soc-title">Normalization & Enrichment</h3>
-        <p class="soc-text">Menstandarkan dan memperkaya data log dengan threat intelligence global.</p>
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-purple-400 transition-all duration-500 shadow-[0_0_25px_rgba(168,85,247,0.25)]">
+        <h3 class="font-semibold text-indigo-600 text-xl mb-3">🔄 Normalization & Enrichment</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Converts multi-format logs (CEF, JSON, XML) into unified models and enriches them with threat intel and MITRE ATT&CK mapping.
+        </p>
       </div>
-
-      <div class="soc-arrow"><i class="fa-solid fa-angles-right"></i></div>
-
-      <!-- STEP 3 -->
-      <div class="soc-step" data-step>
-        <div class="soc-icon">
-          <i class="fa-solid fa-brain"></i>
-        </div>
-        <h3 class="soc-title">AI Correlation Engine</h3>
-        <p class="soc-text">Mendeteksi pola serangan kompleks menggunakan Machine Learning & UEBA.</p>
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-pink-400 transition-all duration-500 shadow-[0_0_25px_rgba(236,72,153,0.25)]">
+        <h3 class="font-semibold text-indigo-600 text-xl mb-3">🧠 AI Correlation Engine</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Detects behavioral anomalies and lateral movements using ML models and UEBA patterns.
+        </p>
       </div>
+    </div>
 
-      <div class="soc-arrow"><i class="fa-solid fa-angles-right"></i></div>
+    <!-- animated line right -->
+    <div class="relative hidden lg:block flex-1">
+      <div class="absolute left-0 top-0 w-[3px] h-full bg-gradient-to-b from-indigo-400 via-purple-400 to-pink-400 blur-sm animate-pulse"></div>
+      <div class="absolute left-[2px] top-0 w-[3px] h-full bg-gradient-to-b from-indigo-300 via-purple-300 to-pink-300 opacity-50 animate-[flowDown_5s_linear_infinite]"></div>
+      <div class="text-center mt-32 text-6xl">➡️</div>
+    </div>
+  </div>
 
-      <!-- STEP 4 -->
-      <div class="soc-step" data-step>
-        <div class="soc-icon">
-          <i class="fa-solid fa-robot"></i>
-        </div>
-        <h3 class="soc-title">Automated Response</h3>
-        <p class="soc-text">Menjalankan playbook SOAR otomatis untuk isolasi, blokir, dan mitigasi ancaman.</p>
+  <!-- SECTION 2: Flow Left -->
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-center gap-12 max-w-7xl mx-auto px-8">
+    <!-- animated line left -->
+    <div class="relative hidden lg:block flex-1">
+      <div class="absolute right-0 top-0 w-[3px] h-full bg-gradient-to-b from-pink-400 via-orange-400 to-yellow-400 blur-sm animate-pulse"></div>
+      <div class="absolute right-[2px] top-0 w-[3px] h-full bg-gradient-to-b from-pink-300 via-orange-300 to-yellow-300 opacity-50 animate-[flowDown_5s_linear_infinite]"></div>
+      <div class="text-center mt-32 text-6xl">⬅️</div>
+    </div>
+
+    <div class="flex-1 space-y-10">
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-orange-400 transition-all duration-500 shadow-[0_0_25px_rgba(251,146,60,0.25)]">
+        <h3 class="font-semibold text-indigo-600 text-xl mb-3">⚙️ Automated Response (SOAR)</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Executes AI-based playbooks to contain threats via IP blocking, account suspension, and endpoint isolation.
+        </p>
       </div>
-
-      <div class="soc-arrow"><i class="fa-solid fa-angles-right"></i></div>
-
-      <!-- STEP 5 -->
-      <div class="soc-step" data-step>
-        <div class="soc-icon">
-          <i class="fa-solid fa-magnifying-glass-chart"></i>
-        </div>
-        <h3 class="soc-title">Threat Hunting & Validation</h3>
-        <p class="soc-text">Analyst memvalidasi dan mengeksplorasi ancaman yang belum terdeteksi.</p>
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-lime-400 transition-all duration-500 shadow-[0_0_25px_rgba(132,204,22,0.25)]">
+        <h3 class="font-semibold text-indigo-600 text-xl mb-3">🎯 Threat Hunting & Validation</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Continuous hunt for new TTPs using Sigma, YARA, and KQL queries — validating and tuning rules for precision.
+        </p>
       </div>
-
-      <div class="soc-arrow"><i class="fa-solid fa-angles-right"></i></div>
-
-      <!-- STEP 6 -->
-      <div class="soc-step" data-step>
-        <div class="soc-icon">
-          <i class="fa-solid fa-chart-line"></i>
-        </div>
-        <h3 class="soc-title">Reporting & Compliance</h3>
-        <p class="soc-text">Laporan otomatis untuk ISO 27001, SOC 2, dan pemantauan berkelanjutan.</p>
+      <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-cyan-400 transition-all duration-500 shadow-[0_0_25px_rgba(34,211,238,0.25)]">
+        <h3 class="font-semibold text-indigo-600 text-xl mb-3">📊 Reporting & Compliance</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Generates dashboards, compliance artifacts (SOC 2, ISO 27001, NIST CSF), and audit-ready reports automatically.
+        </p>
       </div>
     </div>
   </div>
+
+  <style>
+    @keyframes flowDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(100%); opacity: 0; }
+    }
+  </style>
 </section>
-
-<!-- FONT AWESOME -->
-<script src="https://kit.fontawesome.com/a2e0a9b8e9.js" crossorigin="anonymous"></script>
-
-<!-- ANIMATION SCRIPT -->
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('in-view');
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('[data-step]').forEach(el => observer.observe(el));
-</script>
-
-<style>
-  .soc-step {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    width: 13rem;
-    text-align: center;
-    transition: all 0.4s ease;
-    position: relative;
-  }
-  .soc-step:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
-    background: rgba(99, 102, 241, 0.15);
-  }
-
-  .soc-icon {
-    background: linear-gradient(135deg, #6366f1, #4338ca);
-    width: 3.5rem;
-    height: 3.5rem;
-    margin: 0 auto 1rem;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.7);
-  }
-
-  .soc-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #e0e7ff;
-    margin-bottom: 0.4rem;
-  }
-
-  .soc-text {
-    color: #c7d2fe;
-    font-size: 0.9rem;
-  }
-
-  .soc-arrow {
-    color: #818cf8;
-    font-size: 1.5rem;
-    animation: pulse-arrow 2s infinite ease-in-out;
-  }
-
-  @keyframes pulse-arrow {
-    0%, 100% { opacity: 0.4; transform: translateX(0); }
-    50% { opacity: 1; transform: translateX(6px); }
-  }
-
-  /* Fade-in animation */
-  [data-step] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-  }
-  [data-step].in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
 
 
     <!-- CTA -->
@@ -749,11 +713,56 @@
 
   document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
 
+// animasi untuk index
 
-  
-  
-</script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Pastikan video/gambar sudah siap dulu
+window.addEventListener("load", () => {
+  // Hero muncul lembut
+  gsap.from("#home", {
+    opacity: 0,
+    duration: 1.8,
+    ease: "power4.out"
+  });
+
+  gsap.from(".hero-video, .hero-image", {
+    scale: 1.08,
+    opacity: 0.3,
+    duration: 2,
+    ease: "power4.out"
+  });
+
+  gsap.from("#home h1", {
+    y: 60,
+    opacity: 0,
+    duration: 1.2,
+    delay: 0.4,
+    ease: "power3.out"
+  });
+
+  gsap.from("#home p", {
+    y: 40,
+    opacity: 0,
+    duration: 1.1,
+    delay: 0.8,
+    ease: "power2.out"
+  });
+
+  gsap.from("#home .btn", {
+    y: 30,
+    opacity: 0,
+    duration: 1.1,
+    delay: 1,
+    ease: "power2.out"
+  });
+});
+
+
+// finish animasi untuk animasi
+
 
   </script>
+  
 </body>
 </html>
