@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privasi Digital di Era Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="canonical" href="https://www.kavari.example/">
+  <link rel="stylesheet" href="style/style.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <style>
+      /* A small style addition to ensure smooth scrolling for anchor links */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-gray-800 font-sans">
+    
+    <!-- HEADER -->
+  <header class="bg-white/60 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/assets/kavari.png" alt="Kavari logo" class="h-10 w-10 object-contain" loading="lazy">
+        <span class="font-semibold text-lg text-gray-800">Kavari</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="index.html" class="text-gray-700 hover:text-indigo-600">Home</a>
+
+        <!-- Company dropdown (desktop) -->
+        <div class="relative group">
+          <button class="flex items-center gap-2 text-gray-700 hover:text-indigo-600">
+            Company
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 group-hover:text-indigo-600 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform scale-95 group-hover:scale-100 transition-all duration-200 z-50">
+            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">About</a>
+            <a href="careers.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Careers</a>
+            <a href="investor.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Investor Relations</a>
+          </div>
+        </div>
+
+        <a href="news.html" class="text-gray-700 hover:text-indigo-600">News</a>
+        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Services</a>
+        <a href="event.html" class="text-gray-700 hover:text-indigo-600">Event</a>
+        <a href="contact.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700">Contact</a>
+      </nav>
+
+      <!-- Mobile Nav Button -->
+      <div class="md:hidden flex items-center gap-3">
+        <button id="menuButton" aria-label="Open menu" class="p-2 text-2xl">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-md">
+      <ul class="flex flex-col text-sm p-4 space-y-2">
+        <li><a href="index.html" class="block py-2 hover:text-indigo-600">Home</a></li>
+
+        <!-- mobile company accordion -->
+        <li>
+          <button id="companyToggle" class="w-full flex justify-between items-center py-2 text-left hover:text-indigo-600">
+            Company
+            <svg id="companyArrow" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul id="companyMenu" class="hidden flex-col pl-4 border-l border-gray-100">
+            <li><a href="about.html" class="block py-2 text-gray-700 hover:text-indigo-600">About</a></li>
+            <li><a href="careers.html" class="block py-2 text-gray-700 hover:text-indigo-600">Careers</a></li>
+            <li><a href="investor.html" class="block py-2 text-gray-700 hover:text-indigo-600">Investor Relations</a></li>
+          </ul>
+        </li>
+
+        <li><a href="news.html" class="block py-2 hover:text-indigo-600">News</a></li>
+        <li><a href="services.html" class="block py-2 hover:text-indigo-600">Services</a></li>
+        <li><a href="event.html" class="block py-2 hover:text-indigo-600">Event</a></li>
+        <li><a href="contact.html" class="block py-2 text-indigo-600 font-semibold">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="bg-white pt-36 pb-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div class="text-left">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              <span class="block">Privasi Digital di Era Modern:</span>
+              <span class="block text-blue-600 mt-2">Melindungi Jejak Digital Anda</span>
+            </h2>
+            <p class="mt-6 text-lg text-gray-700 max-w-xl">
+              Di dunia yang serba terhubung, data pribadi Anda adalah aset paling berharga. Pelajari mengapa perlindungan privasi menjadi krusial dan bagaimana Anda dapat mengambil alih kendali atas informasi pribadi Anda.
+            </p>
+            <div class="mt-8">
+              <a href="#threats" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg inline-block">
+                Pelajari Lebih Lanjut
+              </a>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <img 
+                src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1200&auto=format&fit=crop"
+                alt="Digital privacy concept with a lock on a laptop"
+                class="rounded-xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+      
+      <!-- Threats Section -->
+      <section id="threats" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Ancaman Terbesar Bagi Privasi Digital Anda</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Kenali berbagai risiko yang mengintai data pribadi Anda setiap hari di dunia maya.</p>
+            <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Pelacakan Lintas Situs</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Perusahaan memantau aktivitas Anda di berbagai situs untuk membangun profil detail tentang minat dan kebiasaan Anda, seringkali tanpa persetujuan eksplisit.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.008v.008H12v-.008Z" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Phishing & Rekayasa Sosial</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Penjahat siber menggunakan email dan pesan palsu untuk menipu Anda agar menyerahkan informasi sensitif seperti kata sandi dan detail kartu kredit.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Pelanggaran Data</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Peretasan pada perusahaan besar dapat mengekspos jutaan data pengguna, termasuk nama, email, dan kata sandi, yang kemudian dijual di web gelap.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.243 4.243L6.228 6.228" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Kurangnya Transparansi</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Banyak layanan digital mengumpulkan data dalam jumlah besar namun tidak memberikan informasi yang jelas tentang bagaimana data tersebut digunakan atau dibagikan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Protection Section -->
+      <section id="protection" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Strategi Efektif Melindungi Privasi</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Ambil langkah-langkah proaktif untuk memperkuat benteng pertahanan digital pribadi Anda.</p>
+            <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Manajemen Kata Sandi Kuat</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Gunakan kata sandi unik dan kompleks untuk setiap akun. Manfaatkan manajer kata sandi untuk membuat dan menyimpan kredensial Anda dengan aman.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Otentikasi Dua Faktor (2FA)</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Aktifkan lapisan keamanan tambahan ini. 2FA memastikan hanya Anda yang dapat mengakses akun, bahkan jika kata sandi Anda bocor.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Tinjau Izin Aplikasi</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Periksa secara berkala izin yang Anda berikan kepada aplikasi. Batasi akses ke data yang tidak relevan dengan fungsi inti aplikasi tersebut.</p>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Gunakan VPN & Browser Aman</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Enkripsi koneksi internet Anda dengan VPN untuk menyembunyikan alamat IP. Gunakan browser yang berfokus pada privasi untuk memblokir pelacak online.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Section -->
+      <section id="future" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+         <div class="text-center mb-12">
+           <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Masa Depan Privasi Digital</h2>
+           <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Lanskap privasi terus berevolusi seiring dengan perkembangan teknologi dan regulasi baru.
+           </p>
+           <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+         </div>
+         <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-19.5 0c.99-.203 1.99-.377 3-.52M6.75 7.5h10.5M6.75 7.5c-1.01.143-2.01.317-3 .52m13.5 0c-.99-.203-1.99-.377-3-.52M3.75 12h16.5m-16.5 0a9.002 9.002 0 0 1-2.25.52m19.5 0c-.99.203-1.99.377-3 .52m-13.5 0a9.002 9.002 0 0 0-2.25.52" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Regulasi Privasi Global</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Regulasi seperti GDPR di Eropa mendorong standar perlindungan data yang lebih tinggi di seluruh dunia, memberikan pengguna lebih banyak hak atas data mereka.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Teknologi Peningkat Privasi</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Inovasi seperti bukti tanpa pengetahuan (zero-knowledge proofs) akan memungkinkan pemrosesan data yang aman tanpa mengekspos informasi mentahnya.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900">Kesadaran & Kontrol Pengguna</h3>
+              <p class="text-gray-600 text-base leading-relaxed flex-grow">Pengguna menjadi semakin sadar akan nilai privasi, mendorong perusahaan untuk menawarkan lebih banyak transparansi dan kontrol atas bagaimana data pribadi dikelola.</p>
+            </div>
+         </div>
+       </div>
+      </section>
+    </main>
+
+   <!-- Footer (rich) -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+        <div>
+          <img src="/assets/logo-kavari-white.png" alt="Kavari Logo" class="h-10 mb-4">
+          <p class="text-gray-400 leading-relaxed">
+            <strong>Kavari Kreasi Nusantara</strong> adalah konsultan keamanan informasi dan ISO 27001 di Indonesia.
+            Kami membantu organisasi membangun sistem keamanan yang kuat, efektif, dan sesuai regulasi.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Navigasi</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-400 transition">Beranda</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Layanan</a></li>
+            <li><a href="news.html" class="hover:text-blue-400 transition">Insight</a></li>
+            <li><a href="#iso-roadmap" class="hover:text-blue-400 transition">Roadmap ISO 27001</a></li>
+            <li><a href="contact.html" class="hover:text-blue-400 transition">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Layanan Kami</h4>
+          <ul class="space-y-2">
+            <li><a href="services.html" class="hover:text-blue-400 transition">Implementasi ISO 27001</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Audit Internal & Risk Mitigation</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Red Teaming & Penetration Testing</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Security Awareness Training</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Hubungi Kami</h4>
+          <ul class="space-y-2 text-sm">
+            <li><span class="text-blue-400">📍</span> Jakarta, Indonesia</li>
+            <li><span class="text-blue-400">✉️</span> info@kavari.co.id</li>
+            <li><span class="text-blue-400">📞</span> +62 812-3456-7890</li>
+          </ul>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition">LinkedIn</a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition">Facebook</a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-sm">
+        © 2025 Kavari Kreasi Nusantara. All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>

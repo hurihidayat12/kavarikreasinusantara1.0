@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment Services | Identifikasi Risiko Proaktif</title>
+    <meta name="description" content="Identifikasi risiko sebelum penyerang melakukannya lewat kombinasi Vulnerability Assessments, Asset Inventory, dan Security Posture Reviews.">
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="canonical" href="https://www.kavari.example/">
+  <link rel="stylesheet" href="style/style.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <style>
+        /* Simple smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animasi saat scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            order: 2;
+            text-align: left;
+            padding-left: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+   <!-- HEADER -->
+  <header class="bg-white/60 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="/assets/kavari.png" alt="Kavari logo" class="h-10 w-10 object-contain" loading="lazy">
+        <span class="font-semibold text-lg text-gray-800">Kavari</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="index.html" class="text-gray-700 hover:text-indigo-600">Home</a>
+
+        <!-- Company dropdown (desktop) -->
+        <div class="relative group">
+          <button class="flex items-center gap-2 text-gray-700 hover:text-indigo-600">
+            Company
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 group-hover:text-indigo-600 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform scale-95 group-hover:scale-100 transition-all duration-200 z-50">
+            <a href="about.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">About</a>
+            <a href="careers.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Careers</a>
+            <a href="investor.html" class="block px-4 py-2 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600">Investor Relations</a>
+          </div>
+        </div>
+
+        <a href="news.html" class="text-gray-700 hover:text-indigo-600">News</a>
+        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Services</a>
+        <a href="event.html" class="text-gray-700 hover:text-indigo-600">Event</a>
+        <a href="contact.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700">Contact</a>
+      </nav>
+
+      <!-- Mobile Nav Button -->
+      <div class="md:hidden flex items-center gap-3">
+        <button id="menuButton" aria-label="Open menu" class="p-2 text-2xl">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-md">
+      <ul class="flex flex-col text-sm p-4 space-y-2">
+        <li><a href="index.html" class="block py-2 hover:text-indigo-600">Home</a></li>
+
+        <!-- mobile company accordion -->
+        <li>
+          <button id="companyToggle" class="w-full flex justify-between items-center py-2 text-left hover:text-indigo-600">
+            Company
+            <svg id="companyArrow" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul id="companyMenu" class="hidden flex-col pl-4 border-l border-gray-100">
+            <li><a href="about.html" class="block py-2 text-gray-700 hover:text-indigo-600">About</a></li>
+            <li><a href="careers.html" class="block py-2 text-gray-700 hover:text-indigo-600">Careers</a></li>
+            <li><a href="investor.html" class="block py-2 text-gray-700 hover:text-indigo-600">Investor Relations</a></li>
+          </ul>
+        </li>
+
+        <li><a href="news.html" class="block py-2 hover:text-indigo-600">News</a></li>
+        <li><a href="services.html" class="block py-2 hover:text-indigo-600">Services</a></li>
+        <li><a href="event.html" class="block py-2 hover:text-indigo-600">Event</a></li>
+        <li><a href="contact.html" class="block py-2 text-indigo-600 font-semibold">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-cover bg-center text-white py-32 px-6" style="background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1887&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-blue-900/70"></div>
+            <div class="relative container mx-auto text-center z-10">
+                <div class="animate-on-scroll">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 tracking-tight">
+                        Assessment Services
+                    </h1>
+                    <p class="text-lg md:text-2xl font-light text-blue-100 max-w-3xl mx-auto">
+                        Identifikasi risiko sebelum penyerang melakukannya. Kami memberikan visibilitas aset, temuan tervalidasi, dan rencana perbaikan yang realistis.
+                    </p>
+                    <a href="#services" class="mt-8 inline-block bg-white text-blue-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-100 transition-transform transform hover:scale-105 duration-300">
+                        
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Important Section -->
+        <section id="why-important" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Mengapa Ini Penting?</h2>
+                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Lindungi aset digital Anda dengan proaktif dan penuhi standar kepatuhan dengan mudah.</p>
+                    <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+                </div>
+
+                <div class="flex flex-wrap lg:flex-nowrap items-center gap-12">
+                    <div class="w-full lg:w-1/2">
+                        <div class="animate-on-scroll">
+                           <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop" alt="Tim Profesional Keamanan Siber" class="rounded-lg shadow-2xl object-cover w-full h-full" />
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 space-y-8">
+                        <div class="animate-on-scroll flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Deteksi Dini & Prioritisasi</h3>
+                                <p class="text-gray-600 mt-1">Risiko diperingkat berdasarkan severity, likelihood, dan dampak bisnis.</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Siap Audit</h3>
+                                <p class="text-gray-600 mt-1">Evidensi yang rapi untuk ISO/IEC 27001, NIST CSF, dan regulasi lokal.</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-800">Efisiensi Biaya</h3>
+                                <p class="text-gray-600 mt-1">Kontrol tepat sasaran; kurangi pemborosan pada “nice to have”.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Scope Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Cakupan Layanan Kami</h2>
+                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Pendekatan komprehensif untuk keamanan siber dari berbagai sudut.</p>
+                    <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="animate-on-scroll">
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-blue-400 hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full hover:border-blue-300">
+                            <div class="mb-6"><svg class="h-8 w-8 text-blue-500" stroke-width="1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg></div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Vulnerability Assessments</h3>
+                            <ul class="space-y-3 text-gray-600 list-disc list-inside flex-grow">
+                                <li>Automated scanning + manual validation.</li>
+                                <li>Pemetaan CVE/CVSS, exploitability, business impact.</li>
+                                <li>Rekomendasi patching/hardening yang jelas.</li>
+                                <li>Opsi authenticated scan untuk cek konfigurasi internal.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll">
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-blue-400 hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full hover:border-blue-300">
+                            <div class="mb-6"><svg class="h-8 w-8 text-blue-500" stroke-width="1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg></div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Asset Inventory</h3>
+                            <ul class="space-y-3 text-gray-600 list-disc list-inside flex-grow">
+                                <li>Inventaris hardware, software, akun, data, & integrasi.</li>
+                                <li>Tagging kritikalitas & deteksi shadow IT.</li>
+                                <li>Penandaan end-of-life & unsupported software.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll">
+                        <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-start space-y-4 hover:shadow-blue-400 hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full hover:border-blue-300">
+                            <div class="mb-6"><svg class="h-8 w-8 text-blue-500" stroke-width="1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Security Posture Review</h3>
+                            <ul class="space-y-3 text-gray-600 list-disc list-inside flex-grow">
+                                <li>Policy & control review (IAM, SIEM, Backup/DR, dll).</li>
+                                <li>Configuration review pada cloud/on-prem.</li>
+                                <li>Verifikasi bukti via walkthrough, sampling, dan tabletop.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Metodologi Terstruktur Kami</h2>
+                    <p class="text-lg text-gray-600 mt-2">Proses yang sistematis dan transparan dari awal hingga akhir.</p>
+                    <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+                </div>
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-200"></div>
+                    <div class="animate-on-scroll mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="w-1/2 pr-8 text-right timeline-content"><p class="text-lg font-semibold text-gray-700">Scoping & ROE: Ruang lingkup, akses, jadwal.</p></div>
+                        <div class="z-10 flex items-center order-1"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">1</div></div>
+                    </div>
+                    <div class="animate-on-scroll mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="w-1/2 pl-8 text-left order-2 timeline-content"><p class="text-lg font-semibold text-gray-700">Discovery & Inventory: Pemetaan aset & eksposur.</p></div>
+                        <div class="z-10 flex items-center order-1"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">2</div></div>
+                    </div>
+                    <div class="animate-on-scroll mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="w-1/2 pr-8 text-right timeline-content"><p class="text-lg font-semibold text-gray-700">Scanning & Validation: Gabungan otomatis-manual.</p></div>
+                        <div class="z-10 flex items-center order-1"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">3</div></div>
+                    </div>
+                     <div class="animate-on-scroll mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="w-1/2 pl-8 text-left order-2 timeline-content"><p class="text-lg font-semibold text-gray-700">Posture Assessment: Kebijakan, arsitektur, konfigurasi.</p></div>
+                        <div class="z-10 flex items-center order-1"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">4</div></div>
+                    </div>
+                    <div class="animate-on-scroll mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="w-1/2 pr-8 text-right timeline-content"><p class="text-lg font-semibold text-gray-700">Risk Rating & Prioritization: CVSS + konteks bisnis.</p></div>
+                        <div class="z-10 flex items-center order-1"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">5</div></div>
+                    </div>
+                     <div class="animate-on-scroll mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="w-1/2 pl-8 text-left order-2 timeline-content"><p class="text-lg font-semibold text-gray-700">Reporting & Remediation Plan: Temuan, fix guides, ETA.</p></div>
+                        <div class="z-10 flex items-center order-1"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">6</div></div>
+                    </div>
+                    <div class="animate-on-scroll mb-8 flex justify-between items-center w-full timeline-item">
+                        <div class="w-1/2 pr-8 text-right timeline-content"><p class="text-lg font-semibold text-gray-700">Retest (opsional): Verifikasi perbaikan & update risiko.</p></div>
+                        <div class="z-10 flex items-center order-1"><div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">7</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Deliverables (Yang Anda Terima)</h2>
+                    <p class="text-lg text-gray-600 mt-2">Laporan komprehensif yang dapat ditindaklanjuti untuk semua tingkatan.</p>
+                    <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid sm:grid-cols-2 gap-8">
+                        <div class="animate-on-scroll"><div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:bg-blue-50 transition-colors"><p class="font-semibold text-gray-700">Executive Brief (ringkas, visual, business impact)</p></div></div>
+                        <div class="animate-on-scroll"><div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:bg-blue-50 transition-colors"><p class="font-semibold text-gray-700">Technical Report (detail temuan, bukti, langkah perbaikan)</p></div></div>
+                        <div class="animate-on-scroll"><div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:bg-blue-50 transition-colors"><p class="font-semibold text-gray-700">Asset Register (CSV/XLSX) dengan owner & klasifikasi</p></div></div>
+                        <div class="animate-on-scroll"><div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:bg-blue-50 transition-colors"><p class="font-semibold text-gray-700">Risk Heatmap & Roadmap 90–180 hari</p></div></div>
+                        <div class="animate-on-scroll"><div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:bg-blue-50 transition-colors"><p class="font-semibold text-gray-700">Retest Report (opsional): status perbaikan</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPIs Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">KPI yang Dipantau</h2>
+                    <p class="text-lg text-gray-600 mt-2">Mengukur keberhasilan dan peningkatan postur keamanan Anda.</p>
+                    <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="animate-on-scroll bg-white p-4 rounded-lg shadow-md flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">MTTR kerentanan kritikal menurun.</span>
+                    </div>
+                    <div class="animate-on-scroll bg-white p-4 rounded-lg shadow-md flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Patch compliance ≥95% untuk aset kritikal.</span>
+                    </div>
+                    <div class="animate-on-scroll bg-white p-4 rounded-lg shadow-md flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Coverage inventory ≥98% aset teridentifikasi.</span>
+                    </div>
+                     <div class="animate-on-scroll bg-white p-4 rounded-lg shadow-md flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Pengurangan external exposure (port/service tak perlu).</span>
+                    </div>
+                    <div class="animate-on-scroll bg-white p-4 rounded-lg shadow-md flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span class="text-gray-700">Kenaikan posture score dalam 3–6 bulan.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Findings Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Contoh Temuan Umum</h2>
+                    <p class="text-lg text-gray-600 mt-2">Beberapa masalah umum yang sering kami temukan dan perbaiki.</p>
+                    <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 w-full space-y-4">
+                        <div class="animate-on-scroll flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-gray-700">Outdated/EOL software dan library.</span></div>
+                        <div class="animate-on-scroll flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-gray-700">IAM lemah (tanpa MFA, privilese berlebihan).</span></div>
+                        <div class="animate-on-scroll flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-gray-700">Public exposure tak perlu (portal admin, default creds).</span></div>
+                        <div class="animate-on-scroll flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-gray-700">Backup/DR tidak teruji; RTO/RPO tidak realistis.</span></div>
+                        <div class="animate-on-scroll flex items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-gray-700">Logging tidak terpusat/retensi pendek.</span></div>
+                    </div>
+                    <div class="md:w-1/2 w-full">
+                        <div class="animate-on-scroll">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Dasbor Keamanan" class="rounded-lg shadow-xl w-full h-full object-cover"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="animate-on-scroll text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Timeline Khas Proyek</h2>
+                    <p class="text-lg text-gray-600 mt-2">Proses efisien dalam tiga minggu. Penyesuaian mungkin diperlukan.</p>
+                    <div class="mt-4 w-24 h-1 bg-blue-600 mx-auto rounded"></div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="animate-on-scroll"><div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-500 h-full"><h3 class="text-2xl font-bold text-blue-600 mb-3">Minggu 1</h3><p class="text-gray-600">Scoping, discovery, inventory, initial scans.</p></div></div>
+                    <div class="animate-on-scroll"><div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-500 h-full"><h3 class="text-2xl font-bold text-blue-600 mb-3">Minggu 2</h3><p class="text-gray-600">Validasi manual, posture review, risk rating.</p></div></div>
+                    <div class="animate-on-scroll"><div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-500 h-full"><h3 class="text-2xl font-bold text-blue-600 mb-3">Minggu 3</h3><p class="text-gray-600">Laporan final, remediation workshop, retest ringan (opsional).</p></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (rich) -->
+    <footer class="bg-gray-900 text-gray-300 py-16">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+        <div>
+          <img src="/assets/logo-kavari-white.png" alt="Kavari Logo" class="h-10 mb-4">
+          <p class="text-gray-400 leading-relaxed">
+            <strong>Kavari Kreasi Nusantara</strong> adalah konsultan keamanan informasi dan ISO 27001 di Indonesia.
+            Kami membantu organisasi membangun sistem keamanan yang kuat, efektif, dan sesuai regulasi.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Navigasi</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-blue-400 transition">Beranda</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Layanan</a></li>
+            <li><a href="news.html" class="hover:text-blue-400 transition">Insight</a></li>
+            <li><a href="#iso-roadmap" class="hover:text-blue-400 transition">Roadmap ISO 27001</a></li>
+            <li><a href="contact.html" class="hover:text-blue-400 transition">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Layanan Kami</h4>
+          <ul class="space-y-2">
+            <li><a href="services.html" class="hover:text-blue-400 transition">Implementasi ISO 27001</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Audit Internal & Risk Mitigation</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Red Teaming & Penetration Testing</a></li>
+            <li><a href="services.html" class="hover:text-blue-400 transition">Security Awareness Training</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold mb-4">Hubungi Kami</h4>
+          <ul class="space-y-2 text-sm">
+            <li><span class="text-blue-400">📍</span> Jakarta, Indonesia</li>
+            <li><span class="text-blue-400">✉️</span> info@kavari.co.id</li>
+            <li><span class="text-blue-400">📞</span> +62 812-3456-7890</li>
+          </ul>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition">LinkedIn</a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition">Facebook</a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-sm">
+        © 2025 Kavari Kreasi Nusantara. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

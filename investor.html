@@ -137,73 +137,26 @@
     </nav>
   </header>
 
-  <!-- hero -->
-  <section class="bg-gradient-to-r from-indigo-700 to-indigo-600 text-white py-20 text-center reveal" data-reveal>
-    <h1 class="text-4xl font-bold">Hubungi Kami</h1>
-    <p class="mt-3 max-w-2xl mx-auto">Kami siap membantu Anda dalam layanan konsultasi dan keamanan siber profesional.</p>
+  <section class="bg-indigo-700 text-white py-20 text-center fade" data-reveal>
+    <h1 class="text-4xl font-bold">Investor Relations</h1>
+    <p class="mt-3 max-w-2xl mx-auto">Laporan, tata kelola, dan update strategis Kavari.</p>
   </section>
 
-  <!-- contact section -->
-  <main class="max-w-6xl mx-auto px-6 py-16 space-y-16">
-    <div class="grid md:grid-cols-2 gap-10 reveal" data-reveal>
-      <!-- contact info -->
-      <div class="bg-white p-8 rounded-xl shadow">
-        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Kantor Pusat</h2>
-        <p class="text-gray-600 leading-relaxed">
-          Kavari Kreasi Nusantara<br>
-          Jl. Sudirman No. 123<br>
-          Jakarta Pusat, Indonesia<br>
-        </p>
-        <p class="mt-4 text-gray-600">
-          📞 +62 812 3456 7890<br>
-          ✉️ info@kavari.id
-        </p>
-
-        <div class="mt-6 border-t border-gray-200 pt-4">
-          <h3 class="font-semibold text-indigo-700 mb-1">Kontak CEO</h3>
-          <p class="text-gray-600">Email langsung ke CEO untuk kerja sama strategis.</p>
-          <button onclick="window.location.href='mailto:ceo@kavari.id'" 
-                  class="mt-3 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md transition">
-            ✉️ Email CEO
-          </button>
-        </div>
-      </div>
-
-      <!-- contact form -->
-      <div class="bg-white p-8 rounded-xl shadow">
-        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Kirim Pesan</h2>
-        <form class="space-y-4">
-          <div>
-            <label class="block text-gray-600 mb-1">Nama</label>
-            <input type="text" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-gray-600 mb-1">Email</label>
-            <input type="email" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-          </div>
-          <div>
-            <label class="block text-gray-600 mb-1">Pesan</label>
-            <textarea rows="5" required class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"></textarea>
-          </div>
-          <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md transition">
-            Kirim Pesan
-          </button>
-        </form>
-      </div>
+  <main class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="stat bg-white p-6 rounded-xl shadow" data-reveal><h3 class="text-2xl font-bold text-indigo-700">Rp 12M</h3><p class="text-sm text-gray-600 mt-1">Revenue forecast 2025</p></div>
+      <div class="stat bg-white p-6 rounded-xl shadow" data-reveal><h3 class="text-2xl font-bold text-indigo-700">50+</h3><p class="text-sm text-gray-600 mt-1">Clients served</p></div>
+      <div class="stat bg-white p-6 rounded-xl shadow" data-reveal><h3 class="text-2xl font-bold text-indigo-700">ISO 27001</h3><p class="text-sm text-gray-600 mt-1">Certified processes</p></div>
     </div>
 
-    <!-- map -->
-    <div class="reveal" data-reveal>
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4 text-center">Lokasi Kami</h2>
-      <div class="overflow-hidden rounded-xl shadow-lg">
-        <iframe class="w-full h-96 border-0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8443537819774!2d106.827153!3d-6.167093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3f4e2f1cfd1%3A0x12a80c47f0d9d49c!2sJakarta%20Pusat!5e0!3m2!1sen!2sid!4v1696600000000!5m2!1sen!2sid"
-          allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
+    <section class="mt-12 fade" data-reveal>
+      <h2 class="text-2xl font-semibold text-gray-900 mb-4">Governance & Reports</h2>
+      <p class="text-gray-600">Kami berkomitmen pada transparansi melalui laporan tahunan, kebijakan tata kelola, dan komunikasi berkala dengan pemangku kepentingan.</p>
+      <a class="inline-block mt-4 text-indigo-600" href="#">Unduh Laporan Tahunan →</a>
+    </section>
   </main>
 
-<!-- Footer (rich) -->
+ <!-- Footer (rich) -->
     <footer class="bg-gray-900 text-gray-300 py-16">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
         <div>
@@ -255,12 +208,10 @@
       </div>
     </footer>
 
-
   <script>
     document.getElementById('menuButton').addEventListener('click', ()=>document.getElementById('mobileMenu').classList.toggle('active'));
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); }) }, {threshold:.15});
+    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view') }), {threshold:.15});
     document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
   </script>
-
 </body>
 </html>
